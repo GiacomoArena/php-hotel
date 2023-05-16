@@ -39,10 +39,7 @@ $hotels = [
   ],
 
 ];
-foreach ($hotels as $i => $hotel){
-  
-  var_dump($hotel);
-};
+
 
 ?>
 <!DOCTYPE html>
@@ -57,14 +54,44 @@ foreach ($hotels as $i => $hotel){
   <title>PHP Hotel</title>
 </head>
 <body>
-  
+  <h1>Hotel</h1>
   <ul>
-    <?php foreach ($hotels as $i => $hotel): ?>
-      <?php foreach ($hotel as $value): ?>
+    <?php foreach ($hotels as $index => $hotel): ?>
+      <?php foreach ($hotel as $i => $value): ?>
       <li> <?php  echo $value ?> </li>
       <?php endforeach; ?>
     <?php endforeach; ?>
   </ul>
 
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
 </body>
 </html>
