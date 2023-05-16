@@ -40,6 +40,15 @@ $hotels = [
 
 ];
 
+  foreach ($hotels as $hotel) {
+
+    
+
+      var_dump($hotel['name']);
+      //var_dump($value);
+    
+    
+  };
 
 ?>
 <!DOCTYPE html>
@@ -56,42 +65,57 @@ $hotels = [
 <body>
   <h1>Hotel</h1>
   <ul>
-    <?php foreach ($hotels as $index => $hotel): ?>
-      <?php foreach ($hotel as $i => $value): ?>
-      <li> <?php  echo $value ?> </li>
-      <?php endforeach; ?>
+    <?php foreach ($hotels as  $hotel): ?>
+      
+      <li> <?php  echo  $hotel['name'] ?> </li>
+      
     <?php endforeach; ?>
   </ul>
 
 
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="container">
+    <table class="table">
+      <thead class='d-flex'>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Parking</th>
+          <th scope="col">Vote</th>
+          <th scope="col">Distance to center</th>
+        </tr>
+      </thead>
+      <tbody class='d-flex'>
+        <tr class="row">
+        <?php foreach ($hotels as  $hotel): ?>
+          <th > <?php  echo  $hotel['name'] ?> </th>
+        <?php endforeach; ?>
+        </tr>
+        
+        <tr class="row">
+        <?php foreach ($hotels as  $hotel): ?>
+          <th  > <?php  echo  $hotel['description'] ?> </th>
+        <?php endforeach; ?>
+        </tr>
+        
+        <tr class="row">
+        <?php foreach ($hotels as  $hotel): ?>
+          <th  > <?php  echo  $hotel['parking'] ?> </th>
+        <?php endforeach; ?>
+        </tr>
+        
+        <tr class="row">
+        <?php foreach ($hotels as  $hotel): ?>
+          <th  > <?php  echo  $hotel['vote'] ?> </th>
+        <?php endforeach; ?>
+        </tr>
+        
+        <tr class="row">
+        <?php foreach ($hotels as  $hotel): ?>
+          <th  > <?php  echo  $hotel['distance_to_center'] ?> </th>
+        <?php endforeach; ?>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
