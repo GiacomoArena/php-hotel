@@ -40,15 +40,6 @@ $hotels = [
 
 ];
 
-  foreach ($hotels as $hotel) {
-
-    
-
-      var_dump($hotel['name']);
-      //var_dump($value);
-    
-    
-  };
 
 ?>
 <!DOCTYPE html>
@@ -60,60 +51,66 @@ $hotels = [
   <!-- bootstrap -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
   <!-- //bootstrap -->
+  <link rel="stylesheet" href="css/style.css">
   <title>PHP Hotel</title>
 </head>
+
 <body>
   <h1>Hotel</h1>
-  <ul>
+  <!-- <ul>
     <?php foreach ($hotels as  $hotel): ?>
-      
-      <li> <?php  echo  $hotel['name'] ?> </li>
-      
+      <?php foreach ($hotel as  $value): ?>
+        <li > <?php  echo  $value ?> </li>
+      <?php endforeach; ?>
     <?php endforeach; ?>
-  </ul>
-
-
+  </ul> -->
+  
   <div class="container">
-    <table class="table">
-      <thead class='d-flex'>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Description</th>
-          <th scope="col">Parking</th>
-          <th scope="col">Vote</th>
-          <th scope="col">Distance to center</th>
-        </tr>
-      </thead>
+    <table class="table ">
       <tbody class='d-flex'>
+
         <tr class="row">
-        <?php foreach ($hotels as  $hotel): ?>
-          <th > <?php  echo  $hotel['name'] ?> </th>
-        <?php endforeach; ?>
+          <th >Name</th>
+          <?php foreach ($hotels as  $hotel): ?>
+            <td > <?php  echo  $hotel['name'] ?> </td>
+          <?php endforeach; ?>
         </tr>
-        
+
         <tr class="row">
-        <?php foreach ($hotels as  $hotel): ?>
-          <th  > <?php  echo  $hotel['description'] ?> </th>
-        <?php endforeach; ?>
+          <th >Description</th>
+          <?php foreach ($hotels as  $hotel): ?>
+            <td  > <?php  echo  $hotel['description'] ?> </td>
+          <?php endforeach; ?>
         </tr>
-        
+
         <tr class="row">
-        <?php foreach ($hotels as  $hotel): ?>
-          <th  > <?php  echo  $hotel['parking'] ?> </th>
-        <?php endforeach; ?>
+          <th >Vote</th>
+          <?php foreach ($hotels as  $hotel): ?>
+            <td  > <?php  echo  $hotel['vote'] ?> </td>
+          <?php endforeach; ?>
         </tr>
-        
+
         <tr class="row">
-        <?php foreach ($hotels as  $hotel): ?>
-          <th  > <?php  echo  $hotel['vote'] ?> </th>
-        <?php endforeach; ?>
+          <th >Distance to center</th>
+          <?php foreach ($hotels as  $hotel): ?>
+            <td  > <?php  echo  $hotel['distance_to_center'] ?> </td>
+          <?php endforeach; ?>
         </tr>
-        
+
         <tr class="row">
-        <?php foreach ($hotels as  $hotel): ?>
-          <th  > <?php  echo  $hotel['distance_to_center'] ?> </th>
-        <?php endforeach; ?>
+          <th >Parking</th>
+          <?php foreach ($hotels as  $hotel): ?>
+            <td  > <?php  if ($hotel['parking'] === false) {
+              $hotel['parking'] = 'no';
+              echo $hotel['parking'];
+            }else{
+              $hotel['parking'] = 'si';
+              echo $hotel['parking'];
+            };
+              ?>  </td>
+          <?php endforeach; ?>
         </tr>
+  
       </tbody>
     </table>
   </div>
